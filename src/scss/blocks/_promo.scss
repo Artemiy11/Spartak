@@ -1,0 +1,69 @@
+.promo {
+    height: 950px;
+    position: relative;
+
+    .swiper-container {
+        z-index: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        .swiper-slide {
+            img {
+                width: 100%;
+                transition: 15s all;
+                .img_animated {
+                    animation-name: zoomOut;
+                    animation-duration: 5s;
+                }
+            }
+        }
+        .swiper-button-prev, .swiper-button-next {
+            width: 5%;
+            color: #fff;
+        }
+        .swiper-pagination-bullet {
+            width: 25px;
+            height: 25px;
+            border: #fff 1px solid;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #fff;
+            width: 25px;
+            height: 25px;
+            border: #fff 1px solid;
+        }
+    }
+
+    &__content_first {
+        position: absolute;
+        top: 45%;
+        &_header {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 48px;
+            line-height: 50px;
+        }
+        &_descr {
+            display: block;
+            margin-top: 40px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 300;
+            text-align: justify;
+        }
+        &_btn {
+            background-color: $dark_red;
+            color: #fff;
+            border: none;
+            margin-top: 20px;
+            width: 150px;
+            height: 45px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            &:hover {
+                background-color: $dark_red_active;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,62 @@
+.footer {
+    height: 400px;
+    background-color: rgb(47, 47, 47);
+    padding: 100px 0 100px 0;
+    &__blocks {
+        display: flex;
+        justify-content: space-between;
+        &_item {
+            width: 235px;
+            height: 200px;
+            &_icon {
+                display: block;
+                margin: 0 auto;
+                margin-top: 10px;
+                width: 90px;
+                height: 90px;
+            }
+            &_adress {
+                margin-top: 20px;
+                text-align: center;
+                color: rgb(95, 95, 95);
+            }
+            &_header {
+                font-size: 22px;
+                text-align: center;
+                color: #a3801f;
+            }
+            &_contacts-block {
+                margin-top: 20px;
+            }
+            &_contacts-text {
+                display: block;
+                color: #fff;
+                font-size: 15px;
+            }
+            &_contacts {
+                color: $dark_red;
+                margin-right: 10px;
+                &:hover {
+                    color: $dark_red;
+                }
+            }
+            &_menu {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: block;
+                margin-top: 20px;
+                &_list {
+                    text-align: center;
+                    a {
+                        color: #fff;
+                        transition: 0.6s all;
+                        &:hover {
+                            color: $dark_red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
