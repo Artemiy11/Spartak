@@ -1,0 +1,255 @@
+@media(max-width: 1200px) {
+    .header {
+        .invisible-block {
+            width: 0;
+        }
+        &__menu {
+            &_item {
+                &_link {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .promo {
+        height: 660px;
+        &__content {
+            &_first {
+                top: 45%;
+                left: 10%;
+            }
+        }
+    }
+
+    .offer {
+        height: 400px;
+        &__slide {
+            img {
+                height: 400px;
+            }
+        }
+        &__content {
+            &_header {
+                font-size: 33px;
+            }
+            &_first {
+                &_descr {
+                    margin-top: 0;
+                    margin-bottom: 5px;
+                    font-size: 15px;
+                }
+                &_prices {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .header {
+        &__menu {
+            text-align: center;
+            &_item {
+                &_link {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .promo {
+        height: 510px;
+    }
+    .offer {
+        height: 320px;
+        &__slide {
+            img {
+                height: 320px;
+            }
+        }
+        .swiper-button-next {
+            left: 45%;
+        }
+        &__content {
+            padding: 30px 30px 15px 30px;
+            &_header {
+                font-size: 24px;
+            }
+            &_first {
+                &_descr {
+                    margin-top: 0;
+                    margin-bottom: 5px;
+                    font-size: 12px;
+                    line-height: 22px;
+                }
+                &_prices {
+                    font-size: 12px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+    
+    .advantages {
+        height: 630px;
+        padding: 40px 0 10px 0;
+        &__blocks {
+            &_item {
+                width: 210px;
+                height: 180px;
+                padding: 10px;
+                &_header {
+                    font-size: 17px;
+                    &_red {
+                        &:first-child {
+                            margin-bottom: 20px;
+                        }
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .header {
+        width: 100%;
+        height: 90px;
+        top: 0;
+        nav {
+            width: 100%;
+            height: 100%;
+        }
+        .hamburger {
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 21px;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            span {
+                display: block;
+                width: 40px;
+                height: 2px;
+                margin-bottom: 5px;
+                background-color: $dark_red;
+                transition: 0.5s all;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            &__active {
+                span {
+                    margin-bottom: -2px;
+                    &:nth-child(1) {
+                        transform: translateY(3px) rotate(-45deg);
+                    }
+                    &:nth-child(2) {
+                        display: none;;
+                    }
+                    &:nth-child(3) {
+                        transform: translateY(3px) rotate(45deg);
+                    }
+                }
+            }
+        }
+        .container {
+            height: 90px;
+        }
+        &__icon {
+            height: 90px;
+        }
+        &__menu {
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 110vh;
+            padding: 20px 15px;
+            background-color: rgba(0, 0, 0, .8);
+            transition: 0.6s all;
+            &_active {
+                left: 0
+            }
+            &_item {
+                &_link {
+                    font-size: 17px;
+                    color: $dark_red;
+                    margin-bottom: 10px;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .promo {
+        height: 380px;
+        &__content {
+            &_first {
+                top: 33%;
+                &_header {
+                    font-size: 29px;
+                }
+                &_descr {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .header {
+        height: 50px;
+        &__icon {
+            height: 50px;
+        }
+        .container {
+            height: 50px;
+        }
+    }
+
+    .promo {
+        height: 210px;
+        &__content {
+            &_first {
+                top: 30%;
+                &_header {
+                    font-size: 19px;
+                    line-height: 23px;
+                }
+                &_descr {
+                    margin-top: 10px;
+                    font-size: 9px;
+                }
+                &_btn {
+                    margin-top: 10px;
+                    width: 80px;
+                    height: 30px;
+                    font-size: 9px;
+                }
+            }
+        }
+        .swiper-button-prev, .swiper-button-next {
+            display: none;
+        }
+        .swiper-container {
+            .swiper-pagination-bullet {
+                width: 10px;
+                height: 10px;
+                border: #fff 1px solid;
+            }
+        }
+        .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 0 1px;
+        }
+    }
+}

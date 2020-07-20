@@ -1,21 +1,19 @@
 function slider() {
     const slider = document.querySelector('.offer__slider'),
-    img = document.querySelectorAll('.slider_image'),
-    prev = document.querySelector('#left'),
-    next = document.querySelector('#right'),
-    slidesWrapper = document.querySelectorAll('.offer-slide'),
-    slidesField = document.querySelector('.offer__wrapper'),
-    width = window.getComputedStyle(slidesField).width;
-let   index = 1,
-    offset = 0;
+        img = document.querySelectorAll('.offer__slide'),
+        prev = document.querySelector('.offer__slider-prev'),
+        next = document.querySelector('.offer__slider-next'),
+        slidesWrapper = document.querySelector('.offer__slider-wrapper'),
+        slidesField = document.querySelector('.offer__slider-inner'),
+        width = window.getComputedStyle(slidesField).width;
+let     index = 1,
+        offset = 0;
 
 slidesField.style.width = 100 * img.length + '%'; //делаем карусель такой длины, чтобы уместились все слайды
 slidesField.style.display = 'flex';               //устанавливаем flex, чтобы картинки стояли горизонтально
 slidesField.style.transition = '0.5s all';        
 
-slidesWrapper.forEach(wrapper => {
-    wrapper.style.overflow = 'hidden'; 
-})         //скрываем неактивные слайды
+slidesWrapper.style.overflow = 'hidden';      //скрываем неактивные слайды
 
 img.forEach(slide => {                            //устанавливаем ширину картинок как видимый блок
   slide.style.width = width;
@@ -29,6 +27,7 @@ slider.appendChild(indicators);
 
 for (let i = 0; i < img.length; i++) {
   const dot = document.createElement('li');
+  dot.classList.add('swiper-pagination-bullet');
   dot.classList.add('dot');
 
   dot.getAttribute('data-slide-to', i + 1);
@@ -37,6 +36,7 @@ for (let i = 0; i < img.length; i++) {
 
   if (i == 0) {
       dot.style.opacity = 1;
+      dot.classList.add('swiper-pagination-bullet-active');
   };
 
 };
@@ -50,10 +50,8 @@ indicators.addEventListener('click', (e) => {
               offset = +width.replace(/\D/g, '') * (index - 1);
               slidesField.style.transform = `translateX(-${offset}px)`; 
 
-              dots.forEach(dot => dot.style.opacity = '.5');
-              dot.style.opacity = 1;
-
-              checkNum();
+              dots.forEach(dot => dot.classList.remove('swiper-pagination-bullet-active'));
+              dot.classList.add('swiper-pagination-bullet-active');
           };
       });
   };
@@ -73,10 +71,9 @@ next.addEventListener('click', () => {
       index++;
   };
 
-  dots.forEach(dot => dot.style.opacity = '.5');
-  dots[index - 1].style.opacity = 1;
+  dots.forEach(dot => dot.classList.remove('swiper-pagination-bullet-active'));
+  dots[index - 1].classList.add('swiper-pagination-bullet-active');
 
-  checkNum();
 });
 
 prev.addEventListener('click', () => {
@@ -94,23 +91,10 @@ prev.addEventListener('click', () => {
       index--;
   };
 
-  dots.forEach(dot => dot.style.opacity = '.5');
-  dots[index - 1].style.opacity = 1;
+  dots.forEach(dot => dot.classList.remove('swiper-pagination-bullet-active'));
+  dots[index - 1].classList.add('swiper-pagination-bullet-active');
 
-  checkNum();
 });
-
-function checkNum() {
-  if (img.length < 10) {
-      current.textContent = `0${index}`;
-      total.textContent = `0${img.length}`;
-  } else {
-      current.textContent = index;
-      total.textContent = img.length;
-  };
-}
-
-checkNum();
 
 };
 

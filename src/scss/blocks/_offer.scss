@@ -1,27 +1,29 @@
 .offer {
-    height: 550px;
+    height: 650px;
     position: relative;
-    .swiper-container {
-        width: 50%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        .swiper-slide {
-            img {
-                width: 100%;
-            }
-        }
-    }
 
-    .swiper-button-prev, .swiper-button-next {
-        width: 5%;
+    .swiper-button-prev,
+    .swiper-button-next {
+        left: 1%;
         color: #fff;
     }
+
+    .swiper-button-next {
+        left: 47%;
+    }
+
     .swiper-pagination-bullet {
         width: 25px;
         height: 25px;
         border: #fff 1px solid;
+        cursor: pointer;
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
+
     .swiper-pagination-bullet-active {
         background-color: #fff;
         width: 25px;
@@ -29,39 +31,65 @@
         border: #fff 1px solid;
     }
 
+    #first_content {
+        right: 50%;
+    }
+
     &__content {
-        display: none;
         position: absolute;
         right: 0;
-        width: 50%;
+        top: 0;
+        width: 25%;
         height: 100%;
         padding: 100px 100px 40px 40px;
         background-color: black;
         opacity: 0.4;
-        &_active {
-            display: block;
-        }
+
         &_header {
             color: #fff;
             font-size: 40px;
             font-weight: 700;
             text-transform: uppercase;
         }
+
         &_first_descr {
             display: block;
             margin-top: 30px;
             margin-bottom: 30px;
         }
-        &_first_descr, &_first_prices {
+
+        &_first_descr,
+        &_first_prices {
             color: #fff;
             font-size: 20px;
             line-height: 34px;
             font-weight: 300;
             text-align: justify;
         }
+
         &_first_prices {
             display: block;
         }
     }
-    
+
+    &__slider {
+        height: 100%;
+        ol {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 10px;
+            left: 25%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__slide {
+        height: 100%;
+
+        img {
+            width: 50%;
+            height: 650px;
+        }
+    }
 }
