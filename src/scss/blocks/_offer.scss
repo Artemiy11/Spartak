@@ -74,6 +74,11 @@
 
     &__slider {
         height: 100%;
+        &-inner {
+            display: flex;
+            transition: all 0.5s ease 0s;
+            transform: translateX(0px);
+        }
         ol {
             margin: 0;
             padding: 0;
@@ -90,6 +95,7 @@
         img {
             width: 50%;
             height: 650px;
+            object-fit:cover;
         }
     }
 }

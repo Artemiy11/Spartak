@@ -224,7 +224,7 @@ indicators.addEventListener('click', (e) => {
           if (e.target == dot) {
               index = i + 1;
 
-              offset = +width.replace(/\D/g, '') * (index - 1);
+              offset = +width.replace(/[^,.0-9]/g, '') * (index - 1);
               slidesField.style.transform = `translateX(-${offset}px)`; 
 
               dots.forEach(dot => dot.classList.remove('swiper-pagination-bullet-active'));
@@ -235,10 +235,10 @@ indicators.addEventListener('click', (e) => {
 });
 
 next.addEventListener('click', () => {
-  if (offset == +width.replace(/\D/g, '') * (img.length - 1)) {   //если слайд прокрутился до максимума, то его положение - 0
+  if (offset == +width.replace(/[^,.0-9]/g, '') * (img.length - 1)) {   //если слайд прокрутился до максимума, то его положение - 0
       offset = 0;
   } else {
-      offset += +width.replace(/\D/g, '')                         //прибавляем к положению одно деление слайда
+      offset += +width.replace(/[^,.0-9]/g, '')                         //прибавляем к положению одно деление слайда
   }
   slidesField.style.transform = `translateX(-${offset}px)`;       //добавляем возможность изменять положение слайдов
 
@@ -255,9 +255,9 @@ next.addEventListener('click', () => {
 
 prev.addEventListener('click', () => {
   if (offset == 0) {
-      offset = +width.replace(/\D/g, '') * (img.length - 1);
+      offset = +width.replace(/[^,.0-9]/g, '') * (img.length - 1);
   } else {
-      offset -= +width.replace(/\D/g, '')
+      offset -= +width.replace(/[^,.0-9]/g, '')
   }
 
   slidesField.style.transform = `translateX(-${offset}px)`;

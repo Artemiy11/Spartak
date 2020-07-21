@@ -1,10 +1,13 @@
 .advantages {
-    height: 700px;
+    min-height: 700px;
     padding: 70px 0 10px 0;
-    &__blocks {
-        display: flex;
+    .row {
+        margin: 0;
         justify-content: space-between;
-        width:  100%;
+        width: 100%;
+    }
+    &__blocks {
+
         &_item {
             width: 325px;
             height: 200px;
